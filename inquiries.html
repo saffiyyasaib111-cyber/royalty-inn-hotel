@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inquiries | Royalty Inn</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;1,700&family=Montserrat:wght@200;400;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg: #050505;
+            --gold: #d4af37;
+            --white: #ffffff;
+            --glass: rgba(255, 255, 255, 0.02);
+            --border: rgba(212, 175, 55, 0.15);
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { 
+            background-color: var(--bg); 
+            color: var(--white); 
+            font-family: 'Montserrat', sans-serif; 
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* --- NAVIGATION --- */
+        nav {
+            padding: 40px 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 10;
+        }
+        .logo { font-family: 'Playfair Display', serif; font-size: 1.2rem; letter-spacing: 4px; color: var(--gold); text-decoration: none; }
+        .nav-links a { color: #fff; text-decoration: none; font-size: 0.65rem; text-transform: uppercase; letter-spacing: 2px; margin-left: 30px; opacity: 0.6; transition: 0.3s; }
+        .nav-links a:hover { opacity: 1; color: var(--gold); }
+
+        /* --- MAIN CONTENT --- */
+        .container {
+            flex: 1;
+            display: grid;
+            grid-template-columns: 1fr 1.2fr;
+            padding: 0 10%;
+            align-items: center;
+            gap: 100px;
+        }
+
+        /* LEFT COLUMN */
+        .info-side h1 { font-family: 'Playfair Display', serif; font-size: 4.5rem; line-height: 1; margin-bottom: 30px; font-style: italic; }
+        .info-side p { font-weight: 200; opacity: 0.6; line-height: 2; margin-bottom: 40px; max-width: 400px; }
+        
+        .contact-details { font-size: 0.8rem; letter-spacing: 1px; }
+        .contact-item { margin-bottom: 20px; display: flex; align-items: center; gap: 15px; }
+        .contact-item span { color: var(--gold); font-weight: 600; text-transform: uppercase; font-size: 0.6rem; }
+
+        /* RIGHT COLUMN (FORM) */
+        .form-card {
+            background: var(--glass);
+            padding: 60px;
+            border: 1px solid var(--border);
+            border-radius: 2px;
+            backdrop-filter: blur(10px);
+            position: relative;
+        }
+        .form-card::before {
+            content: ""; position: absolute; top: -10px; right: -10px;
+            width: 50px; height: 50px; border-top: 1px solid var(--gold); border-right: 1px solid var(--gold);
+        }
+
+        .form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+        .full-width { grid-column: span 2; }
+
+        label { display: block; font-size: 0.55rem; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 10px; opacity: 0.5; }
+        input, textarea, select {
+            width: 100%; background: transparent; border: none; border-bottom: 1px solid rgba(255,255,255,0.1);
+            padding: 15px 0; color: #fff; font-family: inherit; font-size: 0.9rem; outline: none; transition: 0.3s;
+        }
+        input:focus, textarea:focus { border-bottom-color: var(--gold); }
+
+        .submit-btn {
+            margin-top: 40px;
+            background: transparent;
+            color: var(--gold);
+            border: 1px solid var(--gold);
+            padding: 18px 40px;
+            cursor: pointer;
+            text-transform: uppercase;
+            font-size: 0.7rem;
+            letter-spacing: 3px;
+            font-weight: 600;
+            transition: 0.4s;
+        }
+        .submit-btn:hover { background: var(--gold); color: #000; }
+
+        /* --- MOBILE --- */
+        @media (max-width: 1100px) {
+            .container { grid-template-columns: 1fr; padding: 50px 5%; gap: 50px; }
+            .info-side h1 { font-size: 3rem; }
+            .form-card { padding: 30px; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+         <a href="#" class="logo">ROYALTY</a>
+        <div class="nav-links">
+            <a href="#about">The Stay</a>
+            <a href="#suites">Suites</a>
+            <a href="#feedback">Reviews</a>
+            <a href="gallery.html">Gallery</a>
+            <a href="reserve.html">Reserve</a>
+            <a href="book.html">Book Now</a>
+            <a href="inquiries.html">Inquiries</a>
+        </div>
+        <a href="#book" class="book-btn">Reserve</a>
+    </nav>
+
+    <div class="container">
+        
+        <div class="info-side">
+            <p style="color: var(--gold); font-size: 0.6rem; letter-spacing: 4px; margin-bottom: 10px;">GET IN TOUCH</p>
+            <h1>Connect with Excellence.</h1>
+            <p>For bespoke events, corporate partnerships, or specific stay requirements, our management team is ready to assist you.</p>
+            
+            <div class="contact-details">
+                <div class="contact-item"><span>Email</span> reservations@royaltyinn.com</div>
+                <div class="contact-item"><span>Phone</span> +27 (0) 33 123 4567</div>
+                <div class="contact-item"><span>Location</span> Pietermaritzburg, South Africa</div>
+            </div>
+        </div>
+
+        <div class="form-card">
+            <form action="#">
+                <div class="form-grid">
+                    <div class="form-group">
+                        <label>First Name</label>
+                        <input type="text" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Last Name</label>
+                        <input type="text" required>
+                    </div>
+                    <div class="form-group full-width">
+                        <label>Email Address</label>
+                        <input type="email" required>
+                    </div>
+                    <div class="form-group full-width">
+                        <label>Subject of Inquiry</label>
+                        <select>
+                            <option>General Information</option>
+                            <option>Event/Wedding Hosting</option>
+                            <option>Corporate Partnership</option>
+                            <option>Press & Media</option>
+                            <option>Other</option>
+                        </select>
+                    </div>
+                    <div class="form-group full-width">
+                        <label>Message</label>
+                        <textarea rows="4" placeholder="How can we assist you?"></textarea>
+                    </div>
+                </div>
+                <button type="submit" class="submit-btn">Send Inquiry</button>
+            </form>
+        </div>
+
+    </div>
+
+    <footer style="padding: 40px 10%; font-size: 0.5rem; opacity: 0.3; letter-spacing: 2px; text-transform: uppercase;">
+        &copy; 2026 Royalty Inn | Designed by Saffiyya Saib
+    </footer>
+
+</body>
+</html>
